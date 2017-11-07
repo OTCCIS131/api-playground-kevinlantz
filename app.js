@@ -6,21 +6,21 @@ $(function() {
             question: " ",
             results: [],
             category: " ",
-
+            crime: []
 
 
         },
         methods: {
             trivia() {
-                this.$http.get('https://opentdb.com/api.php?amount=1')
+                this.$http.get('http://nflarrest.com/api/v1/crime')
                     .then(resp => {
-                        this.results = resp.body
-                        this.find()
+                        this.crime = resp.body
+                            // this.find()
                     })
             },
-            find() {
-                var title1 = results[0].category
-            }
+            // find() {
+            //     var title1 = results[0].category
+            // }
 
         }
     })
