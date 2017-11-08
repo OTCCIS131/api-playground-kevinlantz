@@ -26,18 +26,37 @@
 <body>
     <div class="container-fluid">
         <div id="app">
-            <!-- <button class="btn btn-primary" :disabled="loading" @click="loadFilms">         
-         get stats
-        </button> -->
-            <button class="btn btn-primary" @click="trivia">
-           Show Data
-      </button>
-            <ul class="list-group">
-                <li class="list-group-item" v-for="crimes in crime"> {{crimes.Category + " " + "("+crimes.arrest_count+ ")"}} </li>
 
+            <div class="row">
 
-            </ul>
+                <div class="col-md-4">
+                    <button class="btn btn-primary" @click="trivia">
+                    Show Trivia
+               </button>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for=" result in results "> {{result.question}} </li>
+                    </ul>
+                </div>
 
+                <div class="col-md-4">
+                    <button class="btn btn-primary" @click="crime">
+                        Show NFL Crime
+                   </button>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="crime in crimes"> {{crime.Category + " " + "("+crime.arrest_count+ ")"}} </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-primary" @click="nba">
+                        Show NBA Players
+                   </button>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for=" player in players "> {{player.firstName +" "+ player.lastName }} </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
 

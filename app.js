@@ -2,25 +2,33 @@ $(function() {
     var app = new Vue({
         el: '#app',
         data: {
-            id: " ",
-            question: " ",
             results: [],
-            category: " ",
-            crime: []
-
-
+            crimes: [],
+            players: [],
         },
         methods: {
-            trivia() {
+            crime() {
                 this.$http.get('http://nflarrest.com/api/v1/crime')
                     .then(resp => {
-                        this.crime = resp.body
-                            // this.find()
+                        this.crimes = resp.body
+
                     })
             },
-            // find() {
-            //     var title1 = results[0].category
-            // }
+            trivia() {
+
+                this.$http.get('https://opentdb.com/api.php?amount=4')
+                    .then(resp => {
+                        this.results = resp.body.results
+                    })
+            },
+            nba() {
+                alert("Must have CORS enabled to view!")
+                this.$http.get('http://data.nba.net/10s/prod/v1/2017/players.json')
+                    .then(resp => {
+                        this.players = resp.body.league.standard
+                    })
+
+            },
 
         }
     })
