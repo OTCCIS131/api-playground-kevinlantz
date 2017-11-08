@@ -22,7 +22,7 @@ $(function() {
                     })
             },
             nba() {
-                alert("Must have CORS enabled to view!")
+                alert("Must have CORS enabled to view! \nPlayers Listed by lastname in alphabetical order")
                 this.$http.get('http://data.nba.net/10s/prod/v1/2017/players.json')
                     .then(resp => {
                         this.players = resp.body.league.standard
