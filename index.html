@@ -33,7 +33,7 @@
            Show Data
       </button>
             <ul class="list-group">
-                <li class="list-group-item" v-for="crimes in crime"> {{crimes.Category}} </li>
+                <li class="list-group-item" v-for="crimes in crime"> {{crimes.Category + " " + "("+crimes.arrest_count+ ")"}} </li>
 
 
             </ul>
