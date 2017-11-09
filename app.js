@@ -11,7 +11,6 @@ $(function() {
                 this.$http.get('http://nflarrest.com/api/v1/crime')
                     .then(resp => {
                         this.crimes = resp.body
-
                     })
             },
             trivia() {
@@ -27,9 +26,8 @@ $(function() {
                     .then(resp => {
                         this.players = resp.body.league.standard
                     })
-
             },
-
         }
     })
+
 });
